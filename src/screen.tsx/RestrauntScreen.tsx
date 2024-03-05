@@ -15,8 +15,8 @@ const RestrauntScreen = () => {
     const response = await fetch(ALL_RESTURANTS);
     const jsonResponse = await response.json();
     const resturants =
-      jsonResponse.data?.cards[1].card.card.gridElements.infoWithStyle
-        .restaurants;
+      jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
     setRestrauntList(resturants);
   };
 
