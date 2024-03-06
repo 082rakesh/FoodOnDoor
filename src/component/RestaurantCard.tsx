@@ -1,35 +1,41 @@
-import {Image, StyleSheet, View, Text} from 'react-native';
+import {Image, StyleSheet, View, Text, Pressable} from 'react-native';
 import React, {FC} from 'react';
-import {Info} from '../model/Restraunts';
+import {Info} from '../model/Restaurants';
 import {IMG_BASE_URL} from '../utils/Constants';
 
 interface Props {
   resInfo: Info;
+  onPressHandle: () => void;
 }
-const RestrauntCard: FC<Props> = ({resInfo}) => {
+const RestaurantCard: FC<Props> = ({resInfo, onPressHandle}) => {
   const {name, avgRating, cuisines, cloudinaryImageId, areaName, costForTwo} =
     resInfo;
   const imageUrl: string = IMG_BASE_URL + cloudinaryImageId;
 
+  const moveToDetails = () => {
+    onPressHandle();
+  };
   return (
-    <View style={styles.mainContainer}>
-      <View style={styles.imageContainer}>
-        <Image
-          style={styles.imageStyle}
-          resizeMode="cover"
-          source={{uri: imageUrl}}
-        />
-      </View>
-      <View style={styles.detailsContainer}>
-        <Text style={styles.resNameStyle}>{name}</Text>
-        <Text style={styles.avgRating}>{avgRating} rating</Text>
-        <Text style={styles.cuisinesStyle}>{cuisines.join(', ')}</Text>
-        <View style={styles.locationStyle}>
-          <Text>{areaName}</Text>
-          <Text>{costForTwo}</Text>
+    <Pressable onPress={moveToDetails}>
+      <View style={styles.mainContainer}>
+        <View style={styles.imageContainer}>
+          <Image
+            style={styles.imageStyle}
+            resizeMode="cover"
+            source={{uri: imageUrl}}
+          />
+        </View>
+        <View style={styles.detailsContainer}>
+          <Text style={styles.resNameStyle}>{name}</Text>
+          <Text style={styles.avgRating}>{avgRating} rating</Text>
+          <Text style={styles.cuisinesStyle}>{cuisines.join(', ')}</Text>
+          <View style={styles.locationStyle}>
+            <Text>{areaName}</Text>
+            <Text>{costForTwo}</Text>
+          </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
@@ -75,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RestrauntCard;
+export default RestaurantCard;

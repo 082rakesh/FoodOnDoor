@@ -5,14 +5,18 @@
  * @format
  */
 import React from 'react';
-import Restraunts from './src/screen.tsx/RestrauntScreen';
 import {SafeAreaView, StyleSheet} from 'react-native';
+import RootNavigator from './src/navigation/Navigator';
+import {NavigationContainer} from '@react-navigation/native';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView style={styles.container}>
-      <Restraunts />
-    </SafeAreaView>
+    <NavigationContainer>
+      <RootNavigator />
+
+      {/* <SafeAreaView style={styles.container}>
+      </SafeAreaView> */}
+    </NavigationContainer>
   );
 }
 
