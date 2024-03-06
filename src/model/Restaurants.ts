@@ -53,39 +53,3 @@ export interface Sla {
   lastMileTravelString: string;
   iconType: string;
 }
-
-/*
-export interface Restaurant {
-  resInfo: Info;
-}
-
-export interface Info {
-  id: string;
-  name: string;
-  locality: string;
-  costForTwo: string;
-  cuisines: string[];
-  avgRating: string;
-  cloudinaryImageId: string;
-}
-
-export interface GridElements {
-  restaurants: [Restaurant];
-}
-
-export interface innerCard {
-  gridElements: GridElements;
-}
-
-export interface OuterCard {
-  card: innerCard;
-}
-
-export interface Cards {
-  outerCard: [OuterCard];
-}
-
-export interface DataHolder {
-  data: [Cards];
-}
-*/

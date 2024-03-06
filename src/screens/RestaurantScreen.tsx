@@ -3,8 +3,18 @@ import {StyleSheet, View, FlatList} from 'react-native';
 import {ALL_RESTURANTS} from '../utils/Constants';
 import {Restaurant} from '../model/Restaurants';
 import RestaurantCard from '../component/RestaurantCard';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {HomeStackParamList} from '../navigation/Navigator';
 
-const RestaurantScreen = ({navigation}) => {
+type HomeScreenNavigationProp = NativeStackNavigationProp<
+  HomeStackParamList,
+  'Home'
+>;
+
+type Props = {
+  navigation: HomeScreenNavigationProp;
+};
+const RestaurantScreen = ({navigation}: Props) => {
   const [restrauntList, setRestrauntList] = useState<Restaurant[]>([]);
 
   useEffect(() => {
@@ -16,6 +26,7 @@ const RestaurantScreen = ({navigation}) => {
     };
   }, []);
 
+
   const getRestraunts = async () => {
     const response = await fetch(ALL_RESTURANTS);
     const jsonResponse = await response.json();
@@ -26,7 +37,10 @@ const RestaurantScreen = ({navigation}) => {
   };
 
   const navigateToDetails = () => {
-    navigation.navigate('Details');
+    navigation.navigate('Details', {
+      itemId: 100,
+      otherData: {name: 'Rakesh', age: 30},
+    });
   };
 
   return (
@@ -52,7 +66,7 @@ const RestaurantScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#ffffff',
   },
 });
 

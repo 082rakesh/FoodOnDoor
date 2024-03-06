@@ -1,14 +1,15 @@
-import {StyleSheet, TouchableOpacity, Text, View} from 'react-native';
+import {StyleSheet, View, FlatList} from 'react-native';
 import React, {useEffect} from 'react';
+// import {useRoute} from '@react-navigation/native';
+import ResMenu from '../component/ResMenu';
 
-const RestaurantDetailsScreen = ({navigation}) => {
-  const onPresshandler = () => {
-    navigation.navigate('Details');
-  };
+const RestaurantDetailsScreen = () => {
+  // const route = useRoute();
+  // const {itemId, otherData} = route.params;
+
+  const listRes = ['1', '2', '1'];
 
   useEffect(() => {
-    console.log('use effect in details');
-
     return () => {
       console.log('component will unmount effect in details screen');
     };
@@ -16,10 +17,13 @@ const RestaurantDetailsScreen = ({navigation}) => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text>This is details screen</Text>
-      <TouchableOpacity onPress={onPresshandler}>
-        <Text>Go to details</Text>
-      </TouchableOpacity>
+      <FlatList
+        data={listRes}
+        renderItem={() => {
+          return <ResMenu />;
+        }}
+        key={Math.random()}
+      />
     </View>
   );
 };
@@ -28,8 +32,6 @@ const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
     backgroundColor: '#D3D3D3',
-    justifyContent: 'center',
-    alignItems: 'center',
     rowGap: 20,
   },
 });
