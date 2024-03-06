@@ -23,7 +23,7 @@ const screenOption = {
 
 export type HomeStackParamList = {
   Home: undefined;
-  Details: {itemID: string; otherData: {}};
+  Details: {resID: string};
 };
 
 export type RootStackParamList = {

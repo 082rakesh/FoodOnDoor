@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {StyleSheet, View, FlatList} from 'react-native';
 import {ALL_RESTURANTS} from '../utils/Constants';
 import {Restaurant} from '../model/Restaurants';
@@ -18,14 +18,11 @@ const RestaurantScreen = ({navigation}: Props) => {
   const [restrauntList, setRestrauntList] = useState<Restaurant[]>([]);
 
   useEffect(() => {
-    console.log('use effect list screen');
-
     getRestraunts();
     return () => {
       console.log('component will unmount effect in list screen');
     };
   }, []);
-
 
   const getRestraunts = async () => {
     const response = await fetch(ALL_RESTURANTS);
@@ -36,12 +33,20 @@ const RestaurantScreen = ({navigation}: Props) => {
     setRestrauntList(resturants);
   };
 
-  const navigateToDetails = () => {
-    navigation.navigate('Details', {
-      itemId: 100,
-      otherData: {name: 'Rakesh', age: 30},
-    });
-  };
+  const navigateToDetails = useCallback(
+    (infoID: string) => {
+      navigation.navigate('Details', {
+        resID: infoID,
+      });
+    },
+    [navigation],
+  );
+
+  // const navigateToDetails = (infoID: string) => {
+  //   navigation.navigate('Details', {
+  //     resID: infoID,
+  //   });
+  // };
 
   return (
     <View style={styles.container}>
@@ -51,7 +56,7 @@ const RestaurantScreen = ({navigation}: Props) => {
           return (
             <RestaurantCard
               resInfo={itemData.item.info}
-              onPressHandle={navigateToDetails}
+              onPressHandle={() => navigateToDetails(itemData.item.info.id)}
             />
           );
         }}

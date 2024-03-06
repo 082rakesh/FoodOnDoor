@@ -5,3 +5,5 @@ export const ALL_RESTURANTS =
 export const RESTUARANTS_DETAILS =
   'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.96340&lng=77.58550&restaurantId=';
 export const SEARCH_RESTRAUNTS_PLACEHOLDER_TEXT = 'Search restraunts';
+export const CATAGORY =
+  'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory';

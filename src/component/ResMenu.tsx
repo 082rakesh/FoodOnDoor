@@ -1,19 +1,26 @@
 import {View, Pressable, FlatList, Image, Text, StyleSheet} from 'react-native';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import ResMenuItem from './ResMenuItem';
+import {Card4} from '../model/MenuCard';
 
-const ResMenu = () => {
+type Props = {
+  cardData: Card4;
+};
+const ResMenu = ({cardData}: Props) => {
   const [isShown, setIsShown] = useState(true);
-  const onPresshandler = () => {
+  const {title, itemCards} = cardData;
+
+  const onPresshandler = useCallback(() => {
     setIsShown(!isShown);
-  };
-  const listRes = ['1', '2', '3', '4', '5', '6', '7'];
+  }, [isShown]);
 
   return (
     <View>
       <Pressable onPress={onPresshandler}>
         <View style={styles.headerView}>
-          <Text style={styles.headerTextStyle}>Rocommonded</Text>
+          <Text style={styles.headerTextStyle}>
+            {title} ({itemCards.length})
+          </Text>
           <Image
             style={styles.imageStyle}
             source={{
@@ -24,9 +31,9 @@ const ResMenu = () => {
       </Pressable>
       {isShown && (
         <FlatList
-          data={listRes}
-          renderItem={() => {
-            return <ResMenuItem />;
+          data={itemCards}
+          renderItem={item => {
+            return <ResMenuItem resInfo={item.item.card.info} />;
           }}
           key={Math.random()}
         />

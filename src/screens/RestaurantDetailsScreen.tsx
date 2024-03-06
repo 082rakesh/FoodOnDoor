@@ -1,26 +1,39 @@
 import {StyleSheet, View, FlatList} from 'react-native';
-import React, {useEffect} from 'react';
-// import {useRoute} from '@react-navigation/native';
+import React, {useEffect, useState} from 'react';
+import {useRoute} from '@react-navigation/native';
 import ResMenu from '../component/ResMenu';
+import {CATAGORY, RESTUARANTS_DETAILS} from '../utils/Constants';
+import {Card4, Root} from '../model/MenuCard';
 
 const RestaurantDetailsScreen = () => {
-  // const route = useRoute();
-  // const {itemId, otherData} = route.params;
+  const [menuList, setMenuList] = useState<Card4[]>([]);
 
-  const listRes = ['1', '2', '1'];
+  const route = useRoute();
+  const {resID} = route.params;
 
   useEffect(() => {
-    return () => {
-      console.log('component will unmount effect in details screen');
-    };
+    fetchMenuList();
   }, []);
+
+  const fetchMenuList = async () => {
+    const response = await fetch(RESTUARANTS_DETAILS + resID);
+    const jsonResponse: Root = await response.json();
+
+    const filteredCardList =
+      jsonResponse.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards?.filter(
+        card => card.card?.card['@type'] === CATAGORY,
+      );
+
+    const cardList = filteredCardList.map(item => item.card.card);
+    setMenuList(cardList);
+  };
 
   return (
     <View style={styles.mainContainer}>
       <FlatList
-        data={listRes}
-        renderItem={() => {
-          return <ResMenu />;
+        data={menuList}
+        renderItem={card => {
+          return <ResMenu cardData={card.item} />;
         }}
         key={Math.random()}
       />
