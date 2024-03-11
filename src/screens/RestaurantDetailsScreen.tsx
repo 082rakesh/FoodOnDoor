@@ -1,21 +1,17 @@
 import {StyleSheet, View, FlatList} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {useRoute} from '@react-navigation/native';
 import ResMenu from '../component/ResMenu';
 import {CATAGORY, RESTUARANTS_DETAILS} from '../utils/Constants';
-import {Card4, Root} from '../model/MenuCard';
+import {Info, Root} from '../model/MenuCard';
 
 const RestaurantDetailsScreen = () => {
-  const [menuList, setMenuList] = useState<Card4[]>([]);
+  const [menuList, setMenuList] = useState<Info[]>([]);
 
   const route = useRoute();
   const {resID} = route.params;
 
-  useEffect(() => {
-    fetchMenuList();
-  }, []);
-
-  const fetchMenuList = async () => {
+  const fetchMenuList = useCallback(async () => {
     const response = await fetch(RESTUARANTS_DETAILS + resID);
     const jsonResponse: Root = await response.json();
 
@@ -26,7 +22,11 @@ const RestaurantDetailsScreen = () => {
 
     const cardList = filteredCardList.map(item => item.card.card);
     setMenuList(cardList);
-  };
+  }, [resID]);
+
+  useEffect(() => {
+    fetchMenuList();
+  }, [fetchMenuList]);
 
   return (
     <View style={styles.mainContainer}>

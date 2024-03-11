@@ -5,24 +5,19 @@
  * @format
  */
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
 import RootNavigator from './src/navigation/Navigator';
 import {NavigationContainer} from '@react-navigation/native';
+import appStore from './src/redux/appStore';
+import {Provider} from 'react-redux';
 
 function App(): React.JSX.Element {
   return (
-    <NavigationContainer>
-      <RootNavigator />
-
-      {/* <SafeAreaView style={styles.container}>
-      </SafeAreaView> */}
-    </NavigationContainer>
+    <Provider store={appStore}>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
+    </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 export default App;

@@ -9,6 +9,7 @@ import {NavigatorScreenParams} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RestaurantScreen from '../screens/RestaurantScreen';
 import RestaurantDetailsScreen from '../screens/RestaurantDetailsScreen';
+import Cart from '../component/Cart';
 // add required screen setting like whether header shown or not etc..
 const rootScreenOption = {
   gestureEnabled: false,
@@ -19,6 +20,7 @@ const screenOption = {
   gestureEnabled: false,
   headerShown: true,
   headerStyle: {backgroundColor: '#D3D3D3D3'},
+  headerRight: () => <Cart />,
 };
 
 export type HomeStackParamList = {

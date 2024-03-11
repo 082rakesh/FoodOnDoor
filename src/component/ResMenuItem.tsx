@@ -1,13 +1,23 @@
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import {Info} from '../model/MenuCard';
 import {IMG_BASE_URL} from '../utils/Constants';
+import {useDispatch} from 'react-redux';
+import {addItem} from '../redux/cartSlice';
 
 interface Props {
   resInfo: Info;
 }
 const ResMenuItem = ({resInfo}: Props) => {
   const {name, price, imageId, description} = resInfo;
+
+  const dispatch = useDispatch();
+
+  const onPressHandle = () => {
+    console.log('onPressHandle');
+    dispatch(addItem(resInfo));
+  };
+
   return (
     <View style={styles.topContainer}>
       <View style={styles.cardCOntainer}>
@@ -17,13 +27,18 @@ const ResMenuItem = ({resInfo}: Props) => {
           <Text style={styles.textMarginStyle}>{description}</Text>
         </View>
         <View style={styles.imageContainer}>
-          <Image
-            style={styles.imageStyle}
-            resizeMode="cover"
-            source={{
-              uri: IMG_BASE_URL + imageId,
-            }}
-          />
+          <Pressable onPress={onPressHandle}>
+            <Image
+              style={styles.imageStyle}
+              resizeMode="cover"
+              source={{
+                uri: IMG_BASE_URL + imageId,
+              }}
+            />
+            <View style={styles.addButtonContainer}>
+              <Text style={{fontWeight: 'bold'}}>Add +</Text>
+            </View>
+          </Pressable>
         </View>
       </View>
       <View style={styles.seperator} />
@@ -77,6 +92,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
   },
+  addButtonContainer: {
+    marginTop: -30,
+    marginLeft: 20,
+    backgroundColor: '#fff',
+    width: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
-export default ResMenuItem;
+export default React.memo(ResMenuItem);
