@@ -1,8 +1,19 @@
 import {useEffect, useState} from 'react';
-import {ALL_RESTURANTS} from '../../utils/Constants';
+import {RES_LIST} from '../../utils/Constants';
 import {Restaurant, Root} from '../../model/Restaurants';
-import axios from 'axios';
+import ApiManager from '../http/ApiManager';
+import {GenericRequest} from '../http/GenericRequest';
 
+const headers = {
+  Accept: 'application/json',
+  'Content-Type': 'application/text',
+};
+
+let request: GenericRequest = {
+  method: 'Get',
+  apiName: RES_LIST,
+  httpHeaders: headers,
+};
 export const useRestrauntsList = () => {
   const [restrauntList, setRestrauntList] = useState<Restaurant[]>([]);
 
@@ -11,8 +22,8 @@ export const useRestrauntsList = () => {
   }, [restrauntList.length]);
 
   const getRestraunts = async () => {
-    const response = await axios.get<Root>(ALL_RESTURANTS);
-    const jsonResponse = (await response).data;
+    const jsonResponse: Root = await ApiManager.get(request);
+
     const resturants =
       jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
@@ -21,14 +32,3 @@ export const useRestrauntsList = () => {
 
   return restrauntList;
 };
-
-/*
-const getRestraunts = async () => {
-    const response = await fetch(ALL_RESTURANTS);
-    const jsonResponse = await response.json();
-    const resturants =
-      jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
-        ?.restaurants;
-    setRestrauntList(resturants);
-  };
-*/

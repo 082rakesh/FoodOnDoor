@@ -7,3 +7,7 @@ export const RESTUARANTS_DETAILS =
 export const SEARCH_RESTRAUNTS_PLACEHOLDER_TEXT = 'Search restraunts';
 export const CATAGORY =
   'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory';
+
+export const BASE_URL = 'https://www.swiggy.com/dapi/';
+export const RES_LIST =
+  'restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';

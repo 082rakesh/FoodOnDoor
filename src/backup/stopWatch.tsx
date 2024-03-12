@@ -19,3 +19,33 @@
     return `${minutes}:${seconds}:${milliseconds}`;
   }
 */
+
+// diferent way to call API.
+
+/*
+  const getRestraunts = async () => {
+      const response = await axios.get<Root>(ALL_RESTURANTS);
+      const jsonResponse = (await response).data;
+      const resturants =
+        jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
+          ?.restaurants;
+      setRestrauntList(resturants);
+    };
+    */
+
+/*
+const getRestraunts = async () => {
+    const response = await fetch(ALL_RESTURANTS);
+    const jsonResponse = await response.json();
+    const resturants =
+      jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    setRestrauntList(resturants);
+  };
+*/
+
+// How to use map in TS
+
+// let headerMap = new Map();
+// headerMap.set('Accept', 'application/json');
+// headerMap.set('Content-Type', 'application/text');
