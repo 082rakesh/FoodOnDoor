@@ -49,3 +49,17 @@ const getRestraunts = async () => {
 // let headerMap = new Map();
 // headerMap.set('Accept', 'application/json');
 // headerMap.set('Content-Type', 'application/text');
+
+// How to create RootNavigator
+// const RootNavigator = () => {
+//   return (
+//     <RootStack.Navigator screenOptions={rootScreenOption}>
+//       <RootStack.Screen
+//         name="RestaurantsScreen"
+//         component={RestaurantsStackScreens}
+//       />
+//     </RootStack.Navigator>
+//   );
+// };
+
+// export default RootNavigator;

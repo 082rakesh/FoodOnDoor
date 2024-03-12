@@ -5,17 +5,14 @@
  * @format
  */
 import React from 'react';
-import RootNavigator from './src/navigation/Navigator';
-import {NavigationContainer} from '@react-navigation/native';
 import appStore from './src/redux/appStore';
 import {Provider} from 'react-redux';
+import AppNavigation from './src/navigation/Navigator';
 
 function App(): React.JSX.Element {
   return (
     <Provider store={appStore}>
-      <NavigationContainer>
-        <RootNavigator />
-      </NavigationContainer>
+      <AppNavigation />
     </Provider>
   );
 }

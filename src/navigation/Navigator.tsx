@@ -1,21 +1,25 @@
 /**
  *  Author: Rakesh
  * Objective: Used for navigation between screens.
- * It has used snative tack navigation for navigation and has option to customize header,
+ * It has used native stack navigation for navigation and has option to customize header,
  * title and other props for views.
  */
 import React from 'react';
-import {NavigatorScreenParams} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  NavigatorScreenParams,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import RestaurantScreen from '../screens/RestaurantScreen';
 import RestaurantDetailsScreen from '../screens/RestaurantDetailsScreen';
 import Cart from '../component/Cart';
-// add required screen setting like whether header shown or not etc..
-const rootScreenOption = {
-  gestureEnabled: false,
-  headerShown: false,
-};
+import PostScreen from '../screens/PostScreen';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {useColorScheme} from 'react-native';
+import {darkTheme, defaultTheme} from '../themes/Theme';
+import {DARK_THEME_TYPE} from '../utils/Constants';
 
+// add required screen setting like whether header shown or not etc..
 const screenOption = {
   gestureEnabled: false,
   headerShown: true,
@@ -23,45 +27,80 @@ const screenOption = {
   headerRight: () => <Cart />,
 };
 
-export type HomeStackParamList = {
+export type ResStackParamList = {
   Home: undefined;
   Details: {resID: string};
 };
 
 export type RootStackParamList = {
-  Home: NavigatorScreenParams<HomeStackParamList>;
+  Restaurant: NavigatorScreenParams<ResStackParamList>;
 };
 
 /* Parameter is not a mandatory. It only requires, if you need to pass some param along with route */
 // const RootStack = createNativeStackNavigator<RootStackParamList>();
 // const HomeStack = createNativeStackNavigator<HomeStackParamList>();
 
-const RootStack = createNativeStackNavigator();
-const HomeStack = createNativeStackNavigator();
+// const RootStack = createNativeStackNavigator();
+const RestaurantsStack = createNativeStackNavigator();
+const PostStack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 
-const HomeNavigator = () => {
+const RestaurantsStackScreens = () => {
   return (
-    <HomeStack.Navigator initialRouteName="Home" screenOptions={screenOption}>
-      <HomeStack.Screen
+    <RestaurantsStack.Navigator
+      initialRouteName="RestaurantsScreen"
+      screenOptions={screenOption}>
+      <RestaurantsStack.Screen
         name="Restaurants"
         component={RestaurantScreen}
         options={{title: 'Restaurants'}}
       />
-      <HomeStack.Screen
+      <RestaurantsStack.Screen
         name="Details"
         component={RestaurantDetailsScreen}
         options={{title: 'Restaurants Details'}}
       />
-    </HomeStack.Navigator>
+    </RestaurantsStack.Navigator>
   );
 };
 
-const RootNavigator = () => {
+const PostStackScreens = () => {
   return (
-    <RootStack.Navigator screenOptions={rootScreenOption}>
-      <RootStack.Screen name="HomeScreen" component={HomeNavigator} />
-    </RootStack.Navigator>
+    <PostStack.Navigator initialRouteName="Post" screenOptions={screenOption}>
+      <PostStack.Screen
+        name="PostScreen"
+        component={PostScreen}
+        options={{title: 'Post'}}
+      />
+    </PostStack.Navigator>
   );
 };
 
-export default RootNavigator;
+const TabNavigator = () => {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen
+        name="RestaurantsTab"
+        component={RestaurantsStackScreens}
+        options={{title: 'Restaurants'}}
+      />
+      <Tab.Screen
+        name="PostTab"
+        component={PostStackScreens}
+        options={{title: 'Post'}}
+      />
+    </Tab.Navigator>
+  );
+};
+
+const AppNavigation = () => {
+  const scheme = useColorScheme();
+  return (
+    <NavigationContainer
+      theme={scheme === DARK_THEME_TYPE ? darkTheme : defaultTheme}>
+      <TabNavigator />
+    </NavigationContainer>
+  );
+};
+
+export default AppNavigation;

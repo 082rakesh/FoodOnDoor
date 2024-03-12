@@ -5,6 +5,7 @@ import RestaurantCard from '../component/RestaurantCard';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeStackParamList} from '../navigation/Navigator';
 import {useRestrauntsList} from '../network/hooks/useRestrauntsList';
+import {useTheme} from '@react-navigation/native';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
   HomeStackParamList,
@@ -16,7 +17,7 @@ type Props = {
 };
 const RestaurantScreen = ({navigation}: Props) => {
   const [restrauntList, setRestrauntList] = useState<Restaurant[]>([]);
-
+  const theme = useTheme();
   const restrauntsList: Restaurant[] = useRestrauntsList();
 
   useMemo(() => {
@@ -33,7 +34,8 @@ const RestaurantScreen = ({navigation}: Props) => {
   );
 
   return (
-    <View style={styles.container}>
+    <View
+      style={(styles.container, {backgroundColor: theme.colors.background})}>
       <FlatList
         data={restrauntList}
         renderItem={itemData => {
@@ -55,7 +57,6 @@ const RestaurantScreen = ({navigation}: Props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
   },
 });
 

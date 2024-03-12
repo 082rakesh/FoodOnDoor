@@ -12,7 +12,7 @@ const Cart = () => {
         <Text style={styles.cartItemStyle}>{cartItems.length}</Text>
         <Image
           style={styles.imageStyle}
-          source={require('../assets/cart-icon.png')}
+          source={require('../assets/images/cart-icon.png')}
         />
       </View>
     </Pressable>
