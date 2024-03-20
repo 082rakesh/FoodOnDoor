@@ -1,6 +1,16 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# 👋 Intro
 # Getting Started
+This project is super helpful to kick-start your next project, as it provides all the common tools that you may be looking for, ready-to-go tools. Specifically:
+1. Starter project with TypeScript 
+2. Navigation (Used React-Navigation to implement stack and tab navigation)
+3. Redux ToolKit setup
+4. API layer implemented using Axio, intercepted, etc.
+5. Themes (Dark Theme and default using Navigation)
+6. basic UI Component
+7. Typography, Fonts Colot Palette
+
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
