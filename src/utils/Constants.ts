@@ -12,3 +12,13 @@ export const BASE_URL = 'https://www.swiggy.com/dapi/';
 export const RES_LIST =
   'restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
 export const DARK_THEME_TYPE = 'dark';
+
+export const ALL_POSTS = 'https://jsonplaceholder.typicode.com/posts';
+
+export enum ButtonType {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  LARGE_PRIMARY = 'largePrimary',
+  LARGE_SECONDARY = 'largeSecondary',
+  LINK = 'link',
+}

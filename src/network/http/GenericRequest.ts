@@ -1,15 +1,12 @@
-export interface GenericRequest {
-  method: string;
+export type headers = {};
+export class GenericRequest {
   apiName: string;
   jsonBody?: string;
-  httpHeaders?: {Accept: string; 'Content-Type': string};
+  httpHeaders?: Map<string, string>;
+
+  constructor(apiName = '', jsonBody = '') {
+    this.apiName = apiName;
+    this.jsonBody = jsonBody;
+    this.httpHeaders;
+  }
 }
-
-// This is an another way to create request using Map
-
-// export interface GenericRequest {
-//   method: string;
-//   apiName: string;
-//   jsonBody?: string;
-//   httpHeaders?: Map<string, string>;
-// }

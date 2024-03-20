@@ -1,11 +1,17 @@
 export class GenericResponse<T> {
-  isSuccessful?: boolean;
+  isSuccess?: boolean;
   jsonBody?: string;
   data?: T;
 
-  constructor(isSuccess: boolean, jsonBody: string, data: T) {
-    this.isSuccessful = isSuccess;
-    this.jsonBody = jsonBody;
-    this.data = data;
+  constructor() {
+    this.isSuccess;
+    this.jsonBody;
+    this.data;
   }
 }
+
+export type GenResponse<T> = {
+  isSuccess?: boolean;
+  jsonBody?: string;
+  data?: T;
+};

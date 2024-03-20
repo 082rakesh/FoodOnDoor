@@ -1,22 +1,19 @@
 import {StyleSheet, View, Text, Image, Pressable} from 'react-native';
-import React from 'react';
+import React, {useCallback} from 'react';
 import {Info} from '../model/MenuCard';
 import {IMG_BASE_URL} from '../utils/Constants';
-import {useDispatch} from 'react-redux';
 import {addItem} from '../redux/cartSlice';
-
+import {useAppDispatch} from '../redux/appStore';
 interface Props {
   resInfo: Info;
 }
 const ResMenuItem = ({resInfo}: Props) => {
   const {name, price, imageId, description} = resInfo;
+  const dispatch = useAppDispatch();
 
-  const dispatch = useDispatch();
-
-  const onPressHandle = () => {
-    console.log('onPressHandle');
+  const onPressHandle = useCallback(() => {
     dispatch(addItem(resInfo));
-  };
+  }, [dispatch, resInfo]);
 
   return (
     <View style={styles.topContainer}>
@@ -36,7 +33,7 @@ const ResMenuItem = ({resInfo}: Props) => {
               }}
             />
             <View style={styles.addButtonContainer}>
-              <Text style={{fontWeight: 'bold'}}>Add +</Text>
+              <Text style={styles.bold}>Add +</Text>
             </View>
           </Pressable>
         </View>
@@ -99,6 +96,9 @@ const styles = StyleSheet.create({
     width: 60,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  bold: {
+    fontWeight: 'bold',
   },
 });
 

@@ -4,4 +4,6 @@ export const Spacing = {
   m: 16,
   l: 24,
   xl: 32,
+  five: 5,
+  ten: 10,
 };

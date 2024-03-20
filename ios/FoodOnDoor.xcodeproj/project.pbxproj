@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* FoodOnDoorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FoodOnDoorTests.m */; };
-		11AFFF9821C08097C0ED49ED /* libPods-FoodOnDoor-FoodOnDoorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15432722AC403118675C9877 /* libPods-FoodOnDoor-FoodOnDoorTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		364FDD3601F73C7FAFCEBCA5 /* libPods-FoodOnDoor-FoodOnDoorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AC07451557BB8F40D291836 /* libPods-FoodOnDoor-FoodOnDoorTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C326CD71698DD23E355DB64B /* libPods-FoodOnDoor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8463089A8EAF8806DD2CC5 /* libPods-FoodOnDoor.a */; };
+		C82F609C668B7AF84BB0B9B4 /* libPods-FoodOnDoor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61978026ED433C1DECC741DA /* libPods-FoodOnDoor.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,19 +30,19 @@
 		00E356EE1AD99517003FC87E /* FoodOnDoorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodOnDoorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* FoodOnDoorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoodOnDoorTests.m; sourceTree = "<group>"; };
+		136CD2AF13DFA05044357B8E /* Pods-FoodOnDoor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor.debug.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* FoodOnDoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOnDoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = FoodOnDoor/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = FoodOnDoor/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FoodOnDoor/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FoodOnDoor/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FoodOnDoor/main.m; sourceTree = "<group>"; };
-		15432722AC403118675C9877 /* libPods-FoodOnDoor-FoodOnDoorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodOnDoor-FoodOnDoorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C8353D095244EF9AE699222 /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5EE71BB0CD26AC6E77FF2D64 /* Pods-FoodOnDoor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor.release.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor.release.xcconfig"; sourceTree = "<group>"; };
-		7B8463089A8EAF8806DD2CC5 /* libPods-FoodOnDoor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodOnDoor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B15E3CF58B4FCE5F2B7D8BF /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig"; sourceTree = "<group>"; };
+		61978026ED433C1DECC741DA /* libPods-FoodOnDoor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodOnDoor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6AC07451557BB8F40D291836 /* libPods-FoodOnDoor-FoodOnDoorTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FoodOnDoor-FoodOnDoorTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = FoodOnDoor/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9A017F067708D5B2D5040572 /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig"; sourceTree = "<group>"; };
-		A580F9525452D2D8C50C81D5 /* Pods-FoodOnDoor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor.debug.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor.debug.xcconfig"; sourceTree = "<group>"; };
+		9E1D6083367AA8C5E0551E6F /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0656694144868F5BD05A27C /* Pods-FoodOnDoor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodOnDoor.release.xcconfig"; path = "Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11AFFF9821C08097C0ED49ED /* libPods-FoodOnDoor-FoodOnDoorTests.a in Frameworks */,
+				364FDD3601F73C7FAFCEBCA5 /* libPods-FoodOnDoor-FoodOnDoorTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C326CD71698DD23E355DB64B /* libPods-FoodOnDoor.a in Frameworks */,
+				C82F609C668B7AF84BB0B9B4 /* libPods-FoodOnDoor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				7B8463089A8EAF8806DD2CC5 /* libPods-FoodOnDoor.a */,
-				15432722AC403118675C9877 /* libPods-FoodOnDoor-FoodOnDoorTests.a */,
+				61978026ED433C1DECC741DA /* libPods-FoodOnDoor.a */,
+				6AC07451557BB8F40D291836 /* libPods-FoodOnDoor-FoodOnDoorTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,10 +140,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A580F9525452D2D8C50C81D5 /* Pods-FoodOnDoor.debug.xcconfig */,
-				5EE71BB0CD26AC6E77FF2D64 /* Pods-FoodOnDoor.release.xcconfig */,
-				2C8353D095244EF9AE699222 /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */,
-				9A017F067708D5B2D5040572 /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */,
+				136CD2AF13DFA05044357B8E /* Pods-FoodOnDoor.debug.xcconfig */,
+				D0656694144868F5BD05A27C /* Pods-FoodOnDoor.release.xcconfig */,
+				9E1D6083367AA8C5E0551E6F /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */,
+				2B15E3CF58B4FCE5F2B7D8BF /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "FoodOnDoorTests" */;
 			buildPhases = (
-				768C82EE25BD9D675E054434 /* [CP] Check Pods Manifest.lock */,
+				40AA978608E12D5DBF9D94E8 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				41E45CFF0C8DAEFF51A84233 /* [CP] Embed Pods Frameworks */,
-				2399BE78F9CC8EDF785FAB48 /* [CP] Copy Pods Resources */,
+				04BDFA42FDBE68C046827CC6 /* [CP] Embed Pods Frameworks */,
+				59DFFC81C30D4770B2C291AB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,13 +176,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "FoodOnDoor" */;
 			buildPhases = (
-				473A9EF70FEF4417520EF497 /* [CP] Check Pods Manifest.lock */,
+				9027EBC241C1A2E535FAEDE6 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				1509C9D5F69EA275AF70E68E /* [CP] Embed Pods Frameworks */,
-				5430786F5D7BF629F8FAF580 /* [CP] Copy Pods Resources */,
+				19C796087F6A58B628755165 /* [CP] Embed Pods Frameworks */,
+				CF811E777D8F14FF92EE8123 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,41 +265,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		1509C9D5F69EA275AF70E68E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2399BE78F9CC8EDF785FAB48 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41E45CFF0C8DAEFF51A84233 /* [CP] Embed Pods Frameworks */ = {
+		04BDFA42FDBE68C046827CC6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -316,7 +282,63 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		473A9EF70FEF4417520EF497 /* [CP] Check Pods Manifest.lock */ = {
+		19C796087F6A58B628755165 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40AA978608E12D5DBF9D94E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FoodOnDoor-FoodOnDoorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59DFFC81C30D4770B2C291AB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor-FoodOnDoorTests/Pods-FoodOnDoor-FoodOnDoorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9027EBC241C1A2E535FAEDE6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,7 +360,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5430786F5D7BF629F8FAF580 /* [CP] Copy Pods Resources */ = {
+		CF811E777D8F14FF92EE8123 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,28 +375,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FoodOnDoor/Pods-FoodOnDoor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		768C82EE25BD9D675E054434 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FoodOnDoor-FoodOnDoorTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -410,7 +410,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C8353D095244EF9AE699222 /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */;
+			baseConfigurationReference = 9E1D6083367AA8C5E0551E6F /* Pods-FoodOnDoor-FoodOnDoorTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -437,7 +437,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A017F067708D5B2D5040572 /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */;
+			baseConfigurationReference = 2B15E3CF58B4FCE5F2B7D8BF /* Pods-FoodOnDoor-FoodOnDoorTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -461,7 +461,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A580F9525452D2D8C50C81D5 /* Pods-FoodOnDoor.debug.xcconfig */;
+			baseConfigurationReference = 136CD2AF13DFA05044357B8E /* Pods-FoodOnDoor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -488,7 +488,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5EE71BB0CD26AC6E77FF2D64 /* Pods-FoodOnDoor.release.xcconfig */;
+			baseConfigurationReference = D0656694144868F5BD05A27C /* Pods-FoodOnDoor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

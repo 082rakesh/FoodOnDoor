@@ -1,5 +1,5 @@
 import {Image, StyleSheet, View, Text, Pressable} from 'react-native';
-import React, {FC} from 'react';
+import React, {FC, useCallback} from 'react';
 import {Info} from '../model/Restaurants';
 import {IMG_BASE_URL} from '../utils/Constants';
 
@@ -12,9 +12,9 @@ const RestaurantCard: FC<Props> = ({resInfo, onPressHandle}) => {
     resInfo;
   const imageUrl: string = IMG_BASE_URL + cloudinaryImageId;
 
-  const moveToDetails = () => {
+  const moveToDetails = useCallback(() => {
     onPressHandle();
-  };
+  }, [onPressHandle]);
   return (
     <Pressable onPress={moveToDetails}>
       <View style={styles.mainContainer}>
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RestaurantCard;
+export default React.memo(RestaurantCard);

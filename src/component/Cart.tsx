@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
 });
-export default Cart;
+export default React.memo(Cart);

@@ -3,13 +3,13 @@ import {StyleSheet, View, FlatList} from 'react-native';
 import {Restaurant} from '../model/Restaurants';
 import RestaurantCard from '../component/RestaurantCard';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {HomeStackParamList} from '../navigation/Navigator';
+import {ResStackParamList} from '../navigation/Navigator';
 import {useRestrauntsList} from '../network/hooks/useRestrauntsList';
 import {useTheme} from '@react-navigation/native';
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<
-  HomeStackParamList,
-  'Home'
+  ResStackParamList,
+  'Restaurant'
 >;
 
 type Props = {
@@ -17,16 +17,20 @@ type Props = {
 };
 const RestaurantScreen = ({navigation}: Props) => {
   const [restrauntList, setRestrauntList] = useState<Restaurant[]>([]);
+  // const [isError, setIsError] = useState(false);
+
   const theme = useTheme();
   const restrauntsList: Restaurant[] = useRestrauntsList();
+  // const isAPIFailed: boolean = useRestrauntsList();
 
   useMemo(() => {
+    // isAPIFailed ? setIsError(isAPIFailed) : setRestrauntList(restrauntsList);
     setRestrauntList(restrauntsList);
   }, [restrauntsList]);
 
   const navigateToDetails = useCallback(
     (infoID: string) => {
-      navigation.navigate('Details', {
+      navigation.navigate('RestaurantDetails', {
         resID: infoID,
       });
     },

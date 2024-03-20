@@ -1,41 +1,35 @@
-import {Dimensions, Pressable, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useCallback} from 'react';
 import Button from '../ui-toolkit/Button';
 import {useAppNavigation} from '../navigation/useAppNavigation';
-
+import {ButtonType} from '../utils/Constants';
 
 const PostDetailsScreen = () => {
   const navigation = useAppNavigation();
-  const {height, width} = Dimensions.get('window');
 
-  const onPrimaryPressHandler = () => {
-    console.log('first button presses');
+  const onPrimaryPressHandler = useCallback(() => {
     navigation.navigate('TransactionStack');
-  };
+  }, [navigation]);
   return (
     <View style={styles.container}>
-      <Button type="primary" onPress={onPrimaryPressHandler}>
+      <Button type={ButtonType.PRIMARY} onPress={onPrimaryPressHandler}>
         <Text>Primary Button</Text>
       </Button>
 
-      <Button type="secondary">
+      <Button type={ButtonType.SECONDARY}>
         <Text>Secondary Button</Text>
       </Button>
 
-      <Button type="link">
+      <Button type={ButtonType.LINK}>
         <Text>Link Button</Text>
       </Button>
 
-      <Button type="largePrimary">
+      <Button type={ButtonType.LARGE_PRIMARY}>
         <Text>Large Primary Button</Text>
       </Button>
 
-      <Button type="largeSecondary">
+      <Button type={ButtonType.LARGE_SECONDARY}>
         <Text>Large Secondary Button</Text>
-      </Button>
-
-      <Button type="primary">
-        <Text>Primary custom Button</Text>
       </Button>
     </View>
   );
