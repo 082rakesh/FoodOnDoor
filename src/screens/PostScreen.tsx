@@ -34,7 +34,7 @@ const PostScreen = () => {
         renderItem={item => {
           return (
             <CardView onPress={onPressHandle}>
-              <Text style={{color: theme.colors.text}} type="secondary">
+              <Text style={{color: theme.colors.text}} type="primary">
                 {item.item.title}
               </Text>
             </CardView>

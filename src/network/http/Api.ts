@@ -1,19 +1,19 @@
 import axios from 'axios';
 import {AxiosError} from 'axios';
-import {useAppNavigation} from '../../navigation/useAppNavigation';
+import {Logger} from '../../utils/Logger';
 // import {BASE_URL} from '../../utils/Constants';
 
 // export const apiUrl = axios.create({baseURL: BASE_URL});
 export const apiUrl = axios.create(); // removed base url because 2 different API set.
 
 apiUrl.interceptors.request.use(config => {
-  console.log('**************REQUEST[Interceptor]**********************');
-  console.log(`RequestHeaders:${config.headers}`);
-  console.log(`RequestBody:${config.params}`);
-  console.log(`RequestBody:${config.auth}`);
-  console.log(`RequestData:${config.data}`);
+  Logger.log('**************REQUEST[Interceptor]**********************');
+  Logger.log(`RequestHeaders:${config.headers}`);
+  Logger.log(`RequestBody:${config.params}`);
+  Logger.log(`RequestBody:${config.url}`);
+  Logger.log(`RequestData:${config.data}`);
 
-  console.log('*************************************************');
+  Logger.log('*************************************************');
   return config;
 });
 
@@ -45,9 +45,6 @@ apiUrl.interceptors.response.use(
     } else {
       // Handle other errors
     }
-
-    const navigation = useAppNavigation();
-    navigation.navigate('TransactionStack');
-    // return Promise.reject(error);
+    return Promise.reject(error);
   },
 );

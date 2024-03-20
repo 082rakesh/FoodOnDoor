@@ -16,7 +16,6 @@ export const useRestrauntsList = () => {
 
       const response = (await ApiManager.get(request)) as GenericResponse<Root>;
       if (response.isSuccess) {
-        console.log(`response.isSuccess: ${response.isSuccess}`);
         const jsonResponse = response.data as Root;
         const resturants =
           jsonResponse.data?.cards[1].card?.card?.gridElements?.infoWithStyle
