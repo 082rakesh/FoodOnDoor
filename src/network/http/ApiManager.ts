@@ -1,4 +1,4 @@
-import {apiUrl} from './Api';
+import {apiUrl} from './AxiosHelper';
 import {GenericRequest} from './GenericRequest';
 import {GenericResponse} from './GenericResponse';
 

@@ -22,6 +22,7 @@ const Button = ({
     </Pressable>
   );
 };
+
 const styles = StyleSheet.create({
   primary: {
     ...ButtonStyle.style.primary,
