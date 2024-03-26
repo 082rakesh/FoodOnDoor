@@ -23,6 +23,7 @@ const PostScreen = () => {
     }
   }, [postsStatus, dispatch]);
 
+  console.log('postsStatus', postsStatus);
   const onPressHandle = () => {
     navigation.navigate('PostDetails');
   };

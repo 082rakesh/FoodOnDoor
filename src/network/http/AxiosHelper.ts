@@ -14,12 +14,11 @@ export const axioInstance: AxiosInstance = axios.create(); // removed base url b
 
 axioInstance.interceptors.request.use(
   config => {
-    Logger.log('**************REQUEST[Interceptor]**********************');
-    Logger.log(`RequestHeaders:${config.headers}`);
-    Logger.log(`RequestBody:${config.params}`);
-    Logger.log(`RequestBody:${config.url}`);
-    Logger.log(`RequestData:${config.data}`);
-    Logger.log('*************************************************');
+    Logger.debug('**************REQUEST[Interceptor]**********************');
+    Logger.debug(`RequestHeaders:${config.headers}`);
+    Logger.debug(`RequestBody:${config.params}`);
+    Logger.debug(`RequestBody:${config.url}`);
+    Logger.debug('*************************************************');
     config.metadata = {startTime: new Date()};
     return config;
   },
@@ -31,25 +30,22 @@ axioInstance.interceptors.request.use(
 // add response interceptor
 axioInstance.interceptors.response.use(
   response => {
-    Logger.log('**************RESPONSE[Interceptor]**********************');
-    Logger.log(
-      `ResponseURL:${response.status}: ${response.statusText}: ${response.config.method}`,
-    );
-    Logger.log(`ResponseHeaders:${response.headers}`);
-    //Logger.log(`ResponseData:${response.data}`); //TODO: temporarily commented to avoid huge logging
-    Logger.log('*************************************************');
-
     const endTime = new Date();
     const duration = endTime - response.config.metadata.startTime;
-    Logger.log(`Request to ${response.config.url} took ${duration} ms`);
+    Logger.debug('**************RESPONSE START**********************');
+    Logger.debug(
+      `Response Status:${response.status} Response Status: ${response.config.method}`,
+    );
+    Logger.debug(`Request to ${response.config.url} took ${duration} ms`);
+    Logger.debug('*****************RESPONSE END**********************');
 
     return response;
   },
   error => {
     const err = error as AxiosError;
     const status = error.response ? error.response.status : null;
-    Logger.log('**************Error RESPONSE[Interceptor]***************');
-    Logger.log(
+    Logger.debug('**************Error RESPONSE[Interceptor]***************');
+    Logger.debug(
       `Error response: ${err.code}: ${err.message}: ${err.status} : status is: ${status}`,
     );
 
